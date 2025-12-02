@@ -1,36 +1,54 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>Editar Task</ion-title>
+    <ion-buttons slot="start">
+      <!-- Botón para volver al detalle de la tarea -->
+      <ion-back-button [defaultHref]="['/task-detail', task?.id]"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Editar Tarea</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content *ngIf="task">
+<ion-content class="ion-padding" *ngIf="task">
 
-  <form (ngSubmit)="saveTask()">
+  <div class="edit-task-container">
 
-    <ion-list>
+    <form (ngSubmit)="saveTask()">
 
-      <ion-item>
-        <ion-label position="floating">Título</ion-label>
-        <ion-input [(ngModel)]="task.title" name="title"></ion-input>
-      </ion-item>
+      <ion-list>
 
-      <ion-item>
-        <ion-label position="floating">Descripción</ion-label>
-        <ion-input [(ngModel)]="task.description" name="description"></ion-input>
-      </ion-item>
+        <ion-item>
+          <ion-input 
+            label="Título" 
+            label-placement="floating" 
+            fill="solid" 
+            [(ngModel)]="task.title" 
+            name="title">
+          </ion-input>
+        </ion-item>
 
-      <ion-item>
-        <ion-label>Completada</ion-label>
-        <ion-toggle [(ngModel)]="task.isCompleted" name="isCompleted"></ion-toggle>
-      </ion-item>
+        <ion-item>
+          <ion-input 
+            label="Descripción" 
+            label-placement="floating" 
+            fill="solid" 
+            [(ngModel)]="task.description" 
+            name="description">
+          </ion-input>
+        </ion-item>
 
-    </ion-list>
+        <ion-item>
+          <ion-label>Completada</ion-label>
+          <ion-toggle [(ngModel)]="task.isCompleted" name="isCompleted"></ion-toggle>
+        </ion-item>
 
-    <ion-button expand="full" type="submit" color="primary">
-      Guardar cambios
-    </ion-button>
+      </ion-list>
 
-  </form>
+      <ion-button expand="full" color="primary" type="submit">
+        Guardar cambios
+      </ion-button>
+
+    </form>
+
+  </div>
 
 </ion-content>

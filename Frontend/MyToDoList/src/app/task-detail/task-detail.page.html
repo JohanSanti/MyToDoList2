@@ -1,38 +1,41 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tasks"></ion-back-button>
+    </ion-buttons>
     <ion-title>Detalle de Tarea</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content *ngIf="task">
+<ion-content class="ion-padding" *ngIf="task">
 
-  <ion-list>
-    <ion-item>
-      <ion-label>
-        <h1>{{ task.title }}</h1>
+  <div class="task-detail-container">
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{ task.title }}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
         <p>{{ task.description }}</p>
-      </ion-label>
-    </ion-item>
+        <p>
+          Estado: 
+          <ion-text [color]="task.isCompleted ? 'success' : 'danger'">
+            <strong>{{ task.isCompleted ? 'Completada' : 'Pendiente' }}</strong>
+          </ion-text>
+        </p>
+        <p>Creada: {{ task.createdAt | date:'medium' }}</p>
+      </ion-card-content>
+    </ion-card>
 
-    <ion-item>
-      <ion-label>
-        Estado: <strong>{{ task.isCompleted ? 'Completada' : 'Pendiente' }}</strong>
-      </ion-label>
-    </ion-item>
+    <ion-button color="primary" expand="full" (click)="editTask()">
+      Editar
+    </ion-button>
 
-    <ion-item>
-      <ion-label>
-        Creada: {{ task.createdAt }}
-      </ion-label>
-    </ion-item>
-  </ion-list>
+    <ion-button color="danger" expand="full" (click)="deleteTask()">
+      Eliminar
+    </ion-button>
 
-  <ion-button color="primary" expand="full" (click)="editTask()">
-    Editar
-  </ion-button>
-
-  <ion-button color="danger" expand="full" (click)="deleteTask()">
-    Eliminar
-  </ion-button>
+  </div>
 
 </ion-content>

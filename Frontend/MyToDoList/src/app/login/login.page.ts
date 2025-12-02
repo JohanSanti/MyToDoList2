@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginPage {
   email = "";
   password = "";
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router, private navCtrl: NavController) {}
 
   login() {
     this.http.post('http://localhost:3000/login', {
@@ -31,5 +32,9 @@ export class LoginPage {
       console.error(err);
       alert("Credenciales incorrectas");
     });
+  }
+
+  goToRegister() {
+    this.navCtrl.navigateForward('/register');
   }
 }

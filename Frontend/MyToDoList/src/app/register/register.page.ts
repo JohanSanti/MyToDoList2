@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +14,7 @@ export class RegisterPage {
   email = "";
   password = "";
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router, private navCtrl: NavController) { }
 
   register() {
     this.http.post("http://localhost:3000/register", {
@@ -35,4 +36,9 @@ export class RegisterPage {
       }
     );
   }
+
+  goToLogin() {
+    this.navCtrl.navigateBack('/login');
+  }
+
 }

@@ -1,23 +1,38 @@
-<ion-header>
+<ion-header> 
   <ion-toolbar color="primary">
     <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
 
-  <ion-list>
-    <ion-item>
-      <ion-input placeholder="Email" [(ngModel)]="email"></ion-input>
-    </ion-item>
+  <!-- Contenedor centrado -->
+  <div class="login-container">
 
-    <ion-item>
-      <ion-input placeholder="Password" [(ngModel)]="password" type="password"></ion-input>
-    </ion-item>
-  </ion-list>
+    <ion-list>
+      <ion-item>
+        <ion-input label="Ingrese su correo" label-placement="floating" fill="solid" placeholder="Password" placeholder="email@domain.com" [(ngModel)]="email">
+          <ion-icon slot="start" name="mail" aria-hidden="true"></ion-icon>
+        </ion-input>
+      </ion-item>
 
-  <ion-button expand="full" color="primary" (click)="login()">
-    Entrar
-  </ion-button>
+      <ion-item>
+        <ion-input label="Ingrese su contraseña" label-placement="floating" fill="solid" placeholder="Password" placeholder="Password" [(ngModel)]="password" type="password">
+          <ion-icon slot="start" name="lock-closed" aria-hidden="true"></ion-icon>
+        </ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <ion-button expand="full" color="primary" (click)="login()">
+      Entrar
+    </ion-button>
+
+    <!-- Botón para ir a register -->
+    <ion-button fill="clear" expand="full" (click)="goToRegister()">
+      ¿No tienes cuenta? Regístrate
+    </ion-button>
+
+  </div>
 
 </ion-content>

@@ -1,21 +1,29 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>Tasks</ion-title>
-    <ion-buttons slot="end">
-      <ion-button routerLink="/new-task">
-        <ion-icon name="add-circle-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+
   <ion-list>
     <ion-item *ngFor="let t of tasks" [routerLink]="['/task-detail', t.id]">
       <ion-label>
-        <h2>{{ t.title }}</h2>
-        <p>{{ t.description }}</p>
+        {{ t.title }}
       </ion-label>
+      <ion-icon 
+        slot="end" 
+        [name]="t.isCompleted ? 'checkmark-circle' : 'close-circle'" 
+        color="{{ t.isCompleted ? 'success' : 'danger' }}">
+      </ion-icon>
     </ion-item>
   </ion-list>
+
+  <!-- Botón fijo en la parte inferior -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/new-task" color="primary">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
 </ion-content>

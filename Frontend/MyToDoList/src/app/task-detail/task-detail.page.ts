@@ -25,6 +25,11 @@ export class TaskDetailPage implements OnInit {
     this.loadTask(id);
   }
 
+  ionViewWillEnter() {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.loadTask(id);
+  }
+
   loadTask(id: number) {
     this.taskService.getTask(id).subscribe(
       data => {

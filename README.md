@@ -101,3 +101,8 @@ frontend/
 - PUT /tasks/:id — Actualizar una tarea
 
 - DELETE /tasks/:id — Eliminar una tarea
+
+
+| Login | Forget Password | Register |
+| --- | --- | --- |
+| <img style="height: 400px" src="Imagenes/Captura 1.png"> | <img style="height: 400px" src="Imagenes/Captura 1.png"> | <img style="height: 400px" src="Imagenes/Captura 1.png"> |
