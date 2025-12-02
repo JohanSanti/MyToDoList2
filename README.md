@@ -103,6 +103,6 @@ frontend/
 - DELETE /tasks/:id — Eliminar una tarea
 
 
-| Login | Forget Password | Register |
+| Login | Tasks | Detail |
 | --- | --- | --- |
-| <img style="height: 400px" src="Imagenes/Captura 1.png"> | <img style="height: 400px" src="Imagenes/Captura 1.png"> | <img style="height: 400px" src="Imagenes/Captura 1.png"> |
+| <img style="height: 400px" src="Imagenes/Captura 1.png"> | <img style="height: 400px" src="Imagenes/Captura 3.png"> | <img style="height: 400px" src="Imagenes/Captura 4.png"> |
