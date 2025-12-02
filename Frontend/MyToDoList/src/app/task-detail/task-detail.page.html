@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalle de Tarea</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="task">
+
+  <ion-list>
+    <ion-item>
+      <ion-label>
+        <h1>{{ task.title }}</h1>
+        <p>{{ task.description }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        Estado: <strong>{{ task.isCompleted ? 'Completada' : 'Pendiente' }}</strong>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        Creada: {{ task.createdAt }}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-button color="primary" expand="full" (click)="editTask()">
+    Editar
+  </ion-button>
+
+  <ion-button color="danger" expand="full" (click)="deleteTask()">
+    Eliminar
+  </ion-button>
+
+</ion-content>
