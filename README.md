@@ -1,15 +1,4 @@
 # Sistema de Gestión de Tareas (MyToDoList2)
-## Forma de trabajo actual
-
-- Gestión manual de tareas
-
-- No hay autenticación
-
-- Las tareas no están asociadas a usuarios
-
-- No existe trazabilidad ni registro de cambios
-
-- La actualización y eliminación se hace directamente en la base de datos
 
 ## 📁 Diagrama de Carpetas — Backend (Node.js + Express)
 ```
